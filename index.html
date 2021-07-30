@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+</head>
+<body>
+    <table id="sampleTable" border="1">
+        <tr>
+            <td id="row1cell1">Row1 cell1</td>
+            <td>Row1 cell2</td>
+        </tr>
+        
+    </table>
+    <br>
+    
+    <button type="button" onclick="myFunction()" value="Insert row">Click Here</button>
+
+
+    <script>
+      function myFunction() {
+         var table = document.getElementById("sampleTable");
+         var row = table.insertRow(1);
+         var cell1 = row.insertCell(0);
+         var cell2 = row.insertCell(1);
+         cell1.innerHTML = "NEW CELL1";
+         cell2.innerHTML = "NEW CELL2";
+
+         var elmnt = document.createElement("row1cell1");
+         var textnode = document.createTextNode("Secret mission? What plans? What are you talking about? I'm not getting in there!");
+         elmnt.appendChild(textnode);
+
+         var item = document.getElementById("sampleTable");
+         item.replaceChild(elmnt, item.childNodes[0]);
+      }  
+
+      
+    </script>
+</body>
+</html>
